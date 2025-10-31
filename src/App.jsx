@@ -18,18 +18,6 @@ export const goods = [
 export const App = () => {
   const [selectedGood, setSelectedGood] = useState('Jam');
   const getButtonFor = name => {
-    if (selectedGood === '') {
-      return (
-        <button
-          type="button"
-          data-cy="AddButton"
-          onClick={() => setSelectedGood(name)}
-        >
-          +
-        </button>
-      );
-    }
-
     if (name === selectedGood) {
       return (
         <button
@@ -40,9 +28,17 @@ export const App = () => {
           -
         </button>
       );
+    } else {
+      return (
+        <button
+          type="button"
+          data-cy="AddButton"
+          onClick={() => setSelectedGood(name)}
+        >
+          +
+        </button>
+      );
     }
-
-    return null;
   };
 
   return (
