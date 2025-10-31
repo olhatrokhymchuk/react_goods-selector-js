@@ -23,22 +23,24 @@ export const App = () => {
         <button
           type="button"
           data-cy="RemoveButton"
+          className='button is-info'
           onClick={() => setSelectedGood('')}
         >
           -
         </button>
       );
-    } else {
-      return (
-        <button
-          type="button"
-          data-cy="AddButton"
-          onClick={() => setSelectedGood(name)}
-        >
-          +
-        </button>
-      );
     }
+
+    return (
+      <button
+        type="button"
+        data-cy="AddButton"
+        className='button'
+        onClick={() => setSelectedGood(name)}
+      >
+        +
+      </button>
+    );
   };
 
   return (
